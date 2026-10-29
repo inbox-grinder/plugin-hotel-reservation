@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1",
+  "id": "com.inboxgrinder.examples.hotel-reservation",
+  "name": "Hotel reservations",
+  "description": "Extracts labelled hotel confirmations and reminders with explicit local time offsets.",
+  "version": "0.1.0",
+  "runtime": "wasm-component",
+  "entrypoint": "hotel_reservation.wasm",
+  "publisher": {
+    "name": "Inbox Grinder",
+    "repository": "https://github.com/inbox-grinder/plugin-hotel-reservation"
+  },
+  "compatibility": {
+    "inboxGrinderApi": "0.1"
+  },
+  "permissions": [
+    "read_metadata",
+    "read_text_body",
+    "read_html_body"
+  ],
+  "matches": {
+    "subjectContains": [
+      "hotel",
+      "reservation",
+      "stay",
+      "booking"
+    ]
+  },
+  "contentNeeds": {
+    "metadata": true,
+    "headers": [],
+    "textBody": true,
+    "htmlBody": true,
+    "links": false,
+    "attachments": "none"
+  },
+  "templates": [
+    {
+      "id": "reservation",
+      "kind": "declarative",
+      "path": "template.json"
+    }
+  ],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "recordContract": {
+    "version": 1,
+    "identityVersion": 1,
+    "updateKeyVersion": 1,
+    "capabilities": [
+      {
+        "name": "records",
+        "version": 1,
+        "required": true
+      }
+    ],
+    "templates": [
+      {
+        "family": "reservation",
+        "version": 1
+      }
+    ],
+    "services": []
+  },
+  "catalogue": {
+    "categories": [
+      "travel"
+    ]
+  }
+}

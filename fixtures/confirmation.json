@@ -1,0 +1,46 @@
+{
+  "message": {
+    "accountId": "account-personal",
+    "mailboxName": "INBOX",
+    "uid": 7788,
+    "messageId": "<hotel-confirmation@hotel.example>",
+    "size": 2048,
+    "sourceId": "confirmation"
+  },
+  "sender": {
+    "name": "Harbour Hotel",
+    "address": "reservations@hotel.example",
+    "domain": "hotel.example"
+  },
+  "recipients": {
+    "to": [
+      {
+        "name": "User",
+        "address": "user@example.com",
+        "domain": "example.com"
+      }
+    ],
+    "cc": [],
+    "bcc": []
+  },
+  "subject": "Hotel booking confirmed H-12345",
+  "date": "2026-10-25T12:00:00Z",
+  "headers": {},
+  "textBody": "Hotel: Harbour Hotel\nConfirmation number: H-12345\nCheck-in: 2026-11-01T15:00:00-05:00\nCheck-out: 2026-11-04T11:00:00-05:00",
+  "htmlBody": null,
+  "links": [],
+  "attachments": [],
+  "invocation": {
+    "schemaVersion": "1",
+    "config": {},
+    "sources": [
+      {
+        "id": "confirmation",
+        "kind": "email"
+      }
+    ],
+    "capabilities": [
+      "records"
+    ]
+  }
+}
